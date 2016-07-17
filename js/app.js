@@ -1,24 +1,35 @@
+function init() {
 
-(function() {
-	// code here
-	console.log('I am running :)');
-	var url = 'https://api.github.com/users/';
-	var username = document.getElementById('name').value;
-	// create xhr object
-	var xhr = new XMLHttpRequest();
-	// send the xhr to fetch url
-	xhr.open('GET', url + username, true);
+	var username = document.getElementById('name');
+	var userid = username.value;
+	if (userid == '') {
+		console.log('empty string');
+	} else { 
+			console.log(userid);
+			var url = 'https://api.github.com/users/'+userid;
+			var xhr = new XMLHttpRequest();
+			xhr.onload = function (e) {
+				var data = JSON.parse(xhr.responseText);
+				console.log(data.name);
+			}
+			
+			xhr.open("GET", url);
+			xhr.send();
 
-	xhr.onload = function() {
-		if(xhr.status >= 200 && xhr.status < 400) {
-			// ok, connections established
-			var data = JSON.parse(xhr.responseText);
-			console.log(data);
-		} else {
-			console.log('connection failed!');
+			// clear input
+			function reset() {
+				document.getElementById('name').value = '';
+			}
+
+			reset();
 		}
-	}
 
-	xhr.send();
+}
 
-})();
+
+// let's try it in another pattern, the literal objec pattern
+// (function() {
+// 	var gitSearch = {
+// 		input: document.getElementById('name');
+// 	};
+// })();

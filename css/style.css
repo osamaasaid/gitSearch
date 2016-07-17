@@ -1,0 +1,17 @@
+/* center the page and declare font */
+body {
+	margin: 0 auto;
+	width: 30%;
+	font-family: 'Cormorant SC', serif;
+	font-family: 'Cormorant Unicase', serif;
+}
+
+h1 {
+	font-size: 45px;
+}
+
+input {
+	width: 30%;
+	margin: 12px;
+    padding: 22px;
+}
