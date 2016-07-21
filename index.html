@@ -5,21 +5,19 @@
 	<title>gitSearch | project 1</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Cormorant+SC|Cormorant+Unicase" rel="stylesheet">
-	
-
 </head>
 <body>
 	<div class="container">
-		<h1>Username</h1>
+		<h1 id="username">Github User</h1>
 		<input type="text" id="name">
-		<input type="button" value="click" onclick="init();">
+		<input type="button" value="click" onclick="app.init();">
 
 		<div class="card">
 			<img id="avatar" src="http://placekitten.com/g/200/300" alt="null" align="middle">
 			<ul>
-				<li>username: fakename </li>
-				<li>repos: 10000 </li>
-				<li>url: www.google.com </li>
+				<li id="info1">username: fakename </li>
+				<li id="info2">repos: 10000 </li>
+				<li id="info3">url: www.google.com </li>
 			</ul>
 		</div>
 	</div>
